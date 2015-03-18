@@ -5,6 +5,7 @@
 		= @post.user.name
 		about
 		= time_ago_in_words(@post.created_at)
+		ago
 	.clearfix
 		.post_image_description
 			= image_tag @post.image.url(:medium)
@@ -24,7 +25,7 @@
 			%h3 Random Inspiration
 			.post
 				.post_image
-					= link_to (image_tag @random_post.image.url(:medium)), post_path(@random_post)
+					= link_to (image_tag @random_post.image.url(:small)), post_path(@random_post)
 				.post_content
 					.title
 						%h2= link_to @random_post.title, post_path(@random_post)
