@@ -20,6 +20,9 @@
 			.post_content
 				.title
 					%h2= link_to post.title, post
+					%p
+						Tags
+						= post.trend_list.map { |t| t.title }.join(', ')
 				.data.clearfix
 					%p.username
 						Shared by

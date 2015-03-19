@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150317222440) do
+ActiveRecord::Schema.define(version: 20150319184812) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -35,6 +35,24 @@ ActiveRecord::Schema.define(version: 20150317222440) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "trend_combinations", force: true do |t|
+    t.integer  "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "trend_id"
+  end
+
+  add_index "trend_combinations", ["post_id"], name: "index_trend_combinations_on_post_id"
+  add_index "trend_combinations", ["trend_id"], name: "index_trend_combinations_on_trend_id"
+
+  create_table "trends", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "post_count"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: true do |t|

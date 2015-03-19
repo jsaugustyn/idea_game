@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
 	def new
 		@post = current_user.posts.build
+		@five_random_trends = Trend.all.sample(5)
 	end
 
 	def create
@@ -52,7 +53,7 @@ class PostsController < ApplicationController
 	end
 
 	def post_params
-		params.require(:post).permit(:title,:link,:description,:image)
+		params.require(:post).permit(:title,:link,:description,:image,:trends)
 	end
 
 end
