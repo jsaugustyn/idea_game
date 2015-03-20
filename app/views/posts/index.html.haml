@@ -20,9 +20,11 @@
 			.post_content
 				.title
 					%h2= link_to post.title, post
-					%p
-						Tags
-						= post.trend_list.map { |t| t.title }.join(', ')
+					%p.username
+						- post.trends.each do |trend|
+							= trend.title
+							-#.trend= simple_format(trend.title)
+
 				.data.clearfix
 					%p.username
 						Shared by

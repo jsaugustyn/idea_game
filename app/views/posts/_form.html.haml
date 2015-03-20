@@ -1,10 +1,5 @@
 = simple_form_for @post do |f|
 	= f.association :trends, collection: @five_random_trends.map{|t| [t.title, t.id]}, as: :check_boxes
-	= f.association :trends, collection: @five_random_trends.map{|t| [t.title, t.id]}[0,1], as: :check_boxes
-	= f.association :trends, collection: @five_random_trends.map{|t| [t.title, t.id]}[1,1], as: :check_boxes
-	= f.association :trends, collection: @five_random_trends.map{|t| [t.title, t.id]}[2,1], as: :check_boxes
-	= f.association :trends, collection: @five_random_trends.map{|t| [t.title, t.id]}[3,1], as: :check_boxes
-	= f.association :trends, collection: @five_random_trends.map{|t| [t.title, t.id]}[4,1], as: :check_boxes
 	
 	= f.input :image
 	= f.input :title

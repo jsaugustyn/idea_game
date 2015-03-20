@@ -1,10 +1,10 @@
 Add idea
-	Add random hand of cards
-	Add categories (trends) as selectable tags
+	+ Add random hand of cards
+	+ Add categories (trends) as selectable tags
 	Style form
 
 Trends
-	Add trend model name:string description:text post_count:integer
+	+ Add trend model name:string description:text post_count:integer
 
 Post index
 	Add category count to sidebar
@@ -14,11 +14,12 @@ Post index
 
 Idea show
 	Add comment threads
-	Add category tags
+	+ Add category tags
 	Add upvote/downvote for comments
 
 Other
 	Badging
+	Idea scoring
 
 Signup/Signin
 	Styling

@@ -10,6 +10,8 @@
 		.post_image_description
 			= image_tag @post.image.url(:medium)
 			.description= simple_format(@post.description)
+			- @post.trends.each do |trend|
+				.trend= simple_format(trend.title)
 		.post_data
 			= link_to "Visit Link", @post.link, class: "button"
 			= link_to like_post_path(@post), method: :get, class: "data" do
